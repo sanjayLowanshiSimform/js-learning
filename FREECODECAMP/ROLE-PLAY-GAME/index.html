@@ -1,0 +1,80 @@
+<!--
+Step 1) JavaScript is a powerful language which allows you to build websites that are interactive.
+
+To get started, create your standard HTML boilerplate with a DOCTYPE, html, head, and body, then add a meta tag for the charset. Add a title element and use the text RPG - Dragon Repeller for it. Include a link tag for your stylesheet to link the styles.css file.
+
+Finally, create a div element with id set to game within your body. 
+
+Step 2)
+Create four div elements within your #game element. Give them the following respective id values, in order: stats, controls, monsterStats, and text.
+
+Step 3)
+Create three span elements within your #stats element. Give each of them the class stat. Then give the first one the text XP: 0, the second one the text Health: 100, and the third one the text Gold: 50.
+
+Step 4)
+Wrap the numbers 0, 100, and 50 in span elements, and wrap those new span elements in strong elements. Then give your new span elements id values of xpText, healthText, and goldText, respectively.
+
+Step 5)
+For your #controls element, create three button elements. The first should have the id set to button1, and the text Go to store. The second should have the id set to button2, and the text Go to cave. The third should have the id set to button3, and the text Fight dragon.
+
+Step 6)
+Similar to your #stats element, your #monsterStats element needs two span elements. Give them the class stat and give the first element the text Monster Name: and the second the text Health: . After the text in each, add a strong element with an empty nested span element. Give the first inner span element an id of monsterName and the second inner span element an id of monsterHealth.
+
+Step 7)
+Give your #text element the following text:
+
+Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+
+Step 16)
+Now you can start writing your JavaScript. Begin by creating a script element. This element is used to load JavaScript into your HTML file. You should use an opening <script> and closing </script> tag.
+
+Step 17)
+One of the most powerful tools is your developer console. Depending on your browser, this might be opened by pressing F12 or Ctrl+Shift+I. On Mac, you can press Option + ⌘ + C and select "Console". You can also click the "Console" button above the preview window to see our built-in console.
+
+The developer console will include errors that are produced by your code, but you can also use it to see values of variables in your code, which is helpful for debugging.
+
+Add a console.log("Hello World"); line between your script tags. Then click the "Console" button to open the console. You should see the text Hello World.
+
+Note how the line ends with a semi-colon. It is common practice in JavaScript to end your code lines with semi-colons.
+
+Step 18)
+Before you start writing your project code, you should move it to its own file to keep things organized.
+Remove your console.log("Hello World"); line. Then give your now empty script element a src attribute set to ./script.js.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles.css">
+  <title>RPG - Dragon Repeller</title>
+</head>
+
+<body>
+  <div id="game">
+    <div id="stats">
+      <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+      <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
+      <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+    </div>
+    <div id="controls">
+      <button id="button1">Go to store</button><button id="button2">Go to cave</button><button id="button3">Fight
+        Dragon</button>
+    </div>
+    <div id="monsterStats">
+      <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+      <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+    </div>
+    <div id="text">
+      Welcome to Dragon Repeller. You must defeat the dragon that is
+      preventing people from leaving the town. You are in the town square.
+      Where do you want to go? Use the buttons above.
+    </div>
+  </div>
+
+  <script src="./script.js">
+  </script>
+</body>
+
+</html>

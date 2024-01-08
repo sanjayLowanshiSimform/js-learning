@@ -1,0 +1,76 @@
+/* 
+Step 8)
+Now we need some quick styling. Start by giving the body a background-color set to #0a0a23.
+
+Step 9)
+Give the #text element a background-color of #0a0a23, a color of #ffffff, and 10px of padding on all sides.
+
+Step 10)
+Give your #game a maximum width of 500px and a maximum height of 400px. Set the background-color to #ffffff and the color to #ffffff.
+
+Use margins to center it by setting the top margin to 30px, bottom margin to 0px, and the left and right margin to auto.
+
+Finally, give it 10px of padding on all four sides.
+
+Step 11)
+Give both your #controls and #stats elements a border of 1px solid #0a0a23, a #0a0a23 text color, and 5px of padding.
+
+Step 12)
+Give your #monsterStats element the same border and padding as your #stats element. Set its color to #ffffff and give it a #c70d0d background.
+
+Step 13)
+For now, hide your #monsterStats element with the display property. Do not change any of the other styling.
+
+Step 14)
+Next, give your .stat elements a padding-right of 10px.
+
+Step 15)
+Finally, you will need to add some styles for your buttons. Start by setting the cursor property to pointer. Then set the text color to #0a0a23 and the background-color to #feac32.
+
+Then set the background-image property to linear-gradient(#fecc4c, #ffac33). Lastly, set the border to 3px solid #feac32.`1234
+*/
+
+
+body{
+  background-color: #0a0a23;
+}
+
+#text{
+  background-color: #0a0a23;
+  color: #ffffff;
+  padding: 10px;
+}
+
+#game{
+  max-width: 500px;
+  max-height: 400px;
+  background-color: #ffffff;
+  color: #ffffff;
+  margin: 30px auto 0 auto;
+}
+
+#controls, #stats{
+  border: 1px solid #0a0a23;
+  padding: 5px;
+  color: #0a0a23;
+}
+
+#monsterStats{
+  display: none;
+  border: 1px solid #0a0a23;
+  padding: 5px;
+  color: #ffffff;
+  background: #c70d0d;
+}
+
+.stat{
+  padding-right: 10px;
+}
+
+button{
+  cursor: pointer;
+  color: #0a0a23;
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid #feac32;
+}
