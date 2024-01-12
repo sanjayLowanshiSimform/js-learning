@@ -67,3 +67,55 @@ console.log(fruits3);
 // Answer:
 fruits3.splice(1, 2);
 console.log(fruits3);
+
+/*
+Array.prototype.flat()
+- The flat() method of Array instances creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+Syntax
+- flat()
+- flat(depth)
+
+depth:
+- The depth level specifying how deep a nested array structure should be flattened. Defaults to 1.
+
+challenge-12
+- You are given an array which has more nested arrays inside of it. You are to flatten the array in a way that each element is in a single array. 
+*/
+
+const input = [1, [2], [3, [[4]]], [5, 6]];
+console.log(`const input: ${JSON.stringify(input)}`);
+
+// console.log(`Expected Output : ${JSON.stringify(input.flat(Infinity))}`)
+// OR
+const ch12 = input.flat(Infinity);
+console.log(ch12);
+console.log(`Expected Output : ${JSON.stringify(ch12)}`)
+
+// OR
+
+// Output with depth = 3
+const ch12Depth3 = input.flat(3);
+console.log(`Output with depth = 3 :\n ${JSON.stringify(ch12Depth3)}`);
+
+// Output with default depth i.e. 1
+const ch12DefaultDepth = input.flat();
+console.log(`Output with default depth :\n ${JSON.stringify(ch12DefaultDepth)}`);
+
+/*
+NOTES :
+
+const input = [1, [2], [3, [[4]]], [5, 6]];
+console.log(`input array is: ${input.flat()}`):
+
+- Result of `input.flat()` when used in a string template
+"1,2,3,4,5,6" instead of [1,2,3,[[4]],5,6]
+
+- This statement is using a template literal to create a string that includes the result of input.flat().
+- However, when you concatenate the result of input.flat() with the string, the array is converted to a string, and the default Array.prototype.toString method is applied.
+- The array elements are joined with commas, and the result is a string representation of the flattened array.
+
+To Tackle this :
+- you can use JSON.stringify to maintain the array structure within the template literal.
+- Using JSON.stringify ensures that the array is represented as a string while preserving its structure.
+*/
