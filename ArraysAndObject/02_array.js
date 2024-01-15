@@ -119,3 +119,28 @@ To Tackle this :
 - you can use JSON.stringify to maintain the array structure within the template literal.
 - Using JSON.stringify ensures that the array is represented as a string while preserving its structure.
 */
+
+// Flattened array without using .flat()
+
+function flattenArray(arr) {
+  let flattened = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flattened = flattened.concat(flattenArray(arr[i]));
+      console.log(flattened);
+    } else {
+      flattened.push(arr[i]);
+      console.log(flattened);
+      }
+  }
+
+  return flattened;
+}
+console.log(input);
+console.log("Flattened array is:", flattenArray(input));
+
+
+
+
+ 
