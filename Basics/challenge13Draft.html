@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+
+    body {
+      font-family: "PT Mono", monospace;
+      background: #34495e;
+      color: #fff;
+      font-weight: bold;
+      display: grid;
+      place-content: center;
+      min-height: 100vh;
+    }
+
+    /* var */
+    :root {
+      --blue: #3498db;
+      --red: #e74c3c;
+      --yellow: #f1c40f;
+    }
+
+    container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: var(--blue);
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    h1,
+    h2 {
+      margin-top: 0;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: var(--yellow);
+    }
+
+    #cost {
+      color: var(--yellow);
+    }
+
+    #list,
+    #essentialList {
+      border-top: 1px solid #ddd;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <container>
+    <h1>Shopping list</h1>
+    <ul id="list">
+
+    </ul>
+    <h1>Essentials List</h1>
+    <h2 id="cost"></h2>
+    <ul id="essentialList">
+
+    </ul>
+  </container>
+  <script>
+    let shoppingList = [
+      { text: "bread", cost: 20, need: true },
+      { text: "butter", cost: 45, need: true },
+      { text: "jam", cost: 60, need: false },
+      { text: "ketchup", cost: 40, need: true },
+      { text: "cheese", cost: 45, need: false }
+    ];
+  
+    html = "";
+    for (let index = 0; index < shoppingList.length; index++) {
+      // Build HTML string for each item
+      html += `<li>${shoppingList[index].text} : ${shoppingList[index].cost} </li>`;
+    }
+    // Use filter() to get a new array with only the items where item.need is true
+    let filteredList = shoppingList.filter((item) => item.need);
+  
+    // Use map() to transform each item in filteredList into an HTML string
+    let itemHTML = filteredList.map(
+      (item) => `<li>${item.text} : ${item.cost}</li>`
+    );
+  
+    // Use reduce() to calculate the total cost from the filteredList
+    let totalCost = filteredList.reduce((acc, item) => acc + item.cost, 0);
+  
+    // Set the innerHTML of the 'list' element to the joined itemHTML array
+    document.getElementById("list").innerHTML = html;
+  
+    // Set the innerHTML of the 'essentialList' element to the joined itemHTML array
+    document.getElementById("essentialList").innerHTML = itemHTML.join("");
+  
+    // Set the innerHTML of the 'cost' element to display the totalCost
+    document.getElementById("cost").innerHTML = ` Total Cost: ${totalCost} `;
+  
+  </script>
+</body>
+</html>

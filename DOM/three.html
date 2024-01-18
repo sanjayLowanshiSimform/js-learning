@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM / Chapter Three </title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+
+</body>
+<script>
+  // created element inside DOM using createElement()
+  const div = document.createElement('div')
+  console.log(div);
+  // set it's class name to .main
+  div.className = "main"
+  // set random number as #id to it
+  div.id = Math.round(Math.random() * 10 + 1)
+  // set attribute to it
+  div.setAttribute("title", "generated title")
+  // set backgroundColor and padding to it
+  div.style.backgroundColor = "green"
+  div.style.padding = "12px"
+  // adding text to empty div
+  div.innerText = "Learning JS"
+  const addText = document.createTextNode("DOM - Chapter Three")
+  div.appendChild(addText)
+
+  document.body.appendChild(div)
+</script>
+
+</html>
