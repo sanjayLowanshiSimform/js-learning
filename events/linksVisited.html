@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visited Links</title>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+  </style>
+</head>
+<body>
+
+  <ul id="originalList">
+    <li><a href="https://example1.com" id="link1">Link 1</a></li>
+    <li><a href="https://example2.com" id="link2">Link 2</a></li>
+    <li><a href="https://example3.com" id="link3">Link 3</a></li>
+    <li><a href="https://example4.com" id="link4">Link 4</a></li>
+    <li><a href="https://example5.com" id="link5">Link 5</a></li>
+  </ul>
+
+  <h2>Recently Visited Links</h2>
+  <ul id="visitedList"></ul>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get the original list
+      const originalList = document.getElementById("originalList");
+
+      // Initialize an array to store visited links
+      const visitedLinks = [];
+
+      // Attach click event listeners to each link in the original list
+      originalList.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function(event) {
+          // Prevent the default behavior to stop the navigation
+          event.preventDefault();
+
+          // Add the visited link to the array
+          visitedLinks.unshift(link.cloneNode(true));
+
+          // Update the recently visited list
+          updateVisitedList();
+        });
+      });
+
+      // Function to update the recently visited list
+      function updateVisitedList() {
+        // Get the visited list
+        const visitedList = document.getElementById("visitedList");
+
+        // Clear the current contents of the visited list
+        visitedList.innerHTML = "";
+
+        // Append each visited link to the visited list
+        visitedLinks.forEach(visitedLink => {
+          const listItem = document.createElement("li");
+          listItem.appendChild(visitedLink);
+          visitedList.appendChild(listItem);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
