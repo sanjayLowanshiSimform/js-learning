@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Profile Card</title>
+  <style>
+    #profile-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 300px;
+      margin: 20px;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="profile-card">
+    <img id="profile-picture" src="" alt="Profile Picture">
+    <h2 id="profile-name"></h2>
+    <p id="profile-bio"></p>
+    <p id="profile-followers"></p>
+  </div>
+
+  <script>
+    const requestUrl = 'https://api.github.com/users/visionmedia';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText);
+            populateProfileCard(data);
+        }
+    };
+    xhr.send();
+
+    function populateProfileCard(data) {
+      const profilePicture = document.getElementById('profile-picture');
+      const profileName = document.getElementById('profile-name');
+      const profileBio = document.getElementById('profile-bio');
+      const profileFollowers = document.getElementById('profile-followers');
+
+      profilePicture.src = data.avatar_url;
+      profileName.textContent = data.login;
+      profileBio.textContent = data.bio || 'No bio available';
+      profileFollowers.textContent = `Followers: ${data.followers}`;
+    }
+  </script>
+</body>
+</html>
