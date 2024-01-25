@@ -1,0 +1,38 @@
+NOTES:
+* Promise:
+-> object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+* Promise states:
+-> PENDING
+-> FULFILLED => settled/ resolved.
+-> REJECTED => settled/ resolved.
+
+* then => it's a promise function
+- .then((result) => {
+  // do stuff with result.
+})
+
+- every time a promise is fulfilled and you want to handle that case, you will use then function.
+- it use a function as a parameter which executes when a promise is fulfilled.
+
+* catch => It's a promise function
+- every time a promise is rejected and you want tot handle that case, you use catch function.
+
+- .catch((err) => {
+  // do stuff with the error
+})
+
+* Setting-up sample project:
+
+# API Used by Carved Rock fitness. (Online sporting goods retailer.)
+
+# API Entities:
+- Addresses
+- Items
+- Orders
+- Users
+- ItemCategories
+- OrderStatuses
+
+
+Repo URL -> https://github.com/taylonr/ps-javascript-asynchronous-programming
