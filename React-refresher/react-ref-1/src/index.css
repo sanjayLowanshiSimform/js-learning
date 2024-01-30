@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: #fff;
+  --myRed: #e74c3c;
+  --myBg: #34495e;
+  --myBlue: #3498db;
+  --myRed: #e74c3c;
+  --myYellow: #f1c40f;
+}
+body{
+  color: var(--white);
+  background-color: var(--myBg);
+}
+h2{
+  background-color: var(--myRed);
+  margin: 10px 0;
+  padding: 6px;
+}
+p{
+  margin-bottom: 8px;
+}
+p:last-child{
+  margin-bottom: 0;
+}
