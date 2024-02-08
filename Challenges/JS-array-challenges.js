@@ -9,7 +9,6 @@ console.log(checkIsArray([1, 2, 4, 0]));
 // 2. Write a JavaScript function to clone an array.
 const arrayClone = (input) => {
   return [...input];
-  i;
 };
 
 // OUTPUT
