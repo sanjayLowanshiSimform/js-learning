@@ -44,25 +44,24 @@ console.log(last([7, 9, 0, -2],6));
 /* 5. Write a simple JavaScript program to join all elements of the following array into a string.
 Sample array : myColor = ["Red", "Green", "White", "Black"]; */
 const myColor = ["Red", "Green", "White", "Black"];
-const result5 = myColor.join(", ");
-console.log(result5);
-
+console.log(myColor.toString());
+console.log(myColor.join());
+console.log(myColor.join('+'));
 
 /* 6. Write a JavaScript program that accepts a number as input and inserts dashes (-) between each even number. For example if you accept 025468 the output should be 254-6-8. */
 const insertDashes = (number) => {
   const str = number.toString();
-  const result6 = [];
-  for (let i = 0; i < str.length; i++) {
-    if (parseInt(str[i]) % 2 === 0 && parseInt(str[i + 1]) % 2 === 0) {
-      result6.push(str[i], "-");
+  return str.split('').map((digit, index, array) => {
+    if (parseInt(digit) % 2 === 0 && parseInt(array[index + 1]) % 2 === 0) {
+      return digit + '-';
     } else {
-      result6.push(str[i]);
+      return digit;
     }
-  }
-  return result6.join("");
+  }).join('');
 };
 
-console.log(insertDashes(25468));
+console.log(insertDashes(9284487156));
+
 
 
 /* 7. Write a JavaScript program to sort the items of an array.
@@ -192,3 +191,77 @@ const array2 = [3, 5, 6, 7, 8, 13];
 
 const sumOfIndexes = array1.map((num, index) => num + array2[index]);
 console.log("Sum of individual index values:", sumOfIndexes);
+
+/*
+Write a JavaScript function to sort the following array of objects by title value.
+Sample object :
+
+var library = [ 
+   { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+   { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+   { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+   ];
+*/
+var library = [ 
+  { author: 'Bill Gates', title: 'The Road Ahead', libraryID: 1254},
+  { author: 'Steve Jobs', title: 'Walter Isaacson', libraryID: 4264},
+  { author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', libraryID: 3245}
+];
+
+function sortByTitle(arr) {
+   return arr.sort((a, b) => {
+       const titleA = a.title.toLowerCase();
+       const titleB = b.title.toLowerCase();
+       if (titleA < titleB) {
+           return -1;
+       }
+       if (titleA > titleB) {
+           return 1;
+       }
+       return 0;
+   });
+}
+console.log(sortByTitle(library));
+
+// 21. Function to merge two arrays and remove duplicates
+function merge_array(array21, array22) {
+  return Array.from(new Set([...array21, ...array22]));
+}
+// OUTPUT
+let array21 = [1, 2, 3];
+let array22 = [2, 30, 1];
+console.log(merge_array(array21, array22));
+
+// 22. Function to check if an array contains a specific element
+function contains(arr, element) {
+  return arr.includes(element);
+}
+// OUTPUT
+var arr = [2, 5, 9, 6];
+console.log(contains(arr, 5));
+
+// 23. Function to get the nth largest element from an unsorted array
+function nthlargest(arr, n) {
+  if (n > 0 && n <= arr.length) {
+      const sortedArray = arr.sort((a, b) => b - a);
+      return sortedArray[n - 1];
+  } else {
+      return "Invalid input for 'n'";
+  }
+}
+// OUTPUT
+console.log(nthlargest([ 43, 56, 23, 89, 88, 90, 99, 652], 4)); 
+
+// 24. Function to create an object from an array, using the specified key and excluding it from each value
+function indexOn(arr, keyFunc) {
+  const result = {};
+  arr.forEach(item => {
+      const key = keyFunc(item);
+      const value = { ...item };
+      delete value[key];
+      result[key] = value;
+  });
+  return result;
+}
+// OUTPUT
+console.log(indexOn([ { id: 10, name: 'apple' }, { id: 20, name: 'orange' } ], x => x.id));
