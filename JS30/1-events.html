@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+</head>
+
+<body>
+    <!-- JavaScript Events:
+
+Events in JavaScript are actions or occurrences that happen in the browser or web page. These events can be detected and handled by JavaScript code, allowing developers to create interactive and dynamic web pages. Here are some common JavaScript events along with easy to moderate examples: -->
+
+
+    <!-- Click Event:
+This event occurs when the user clicks on an HTML element. -->
+    <button onclick="alert('Button clicked!')">Click me</button>
+
+    <!-- Mouseover Event:
+Triggers when the mouse pointer moves over an element. -->
+
+    <div onmouseover="console.log('Mouse over!')">Hover over me</div>
+
+    <!-- Keydown Event:
+Fired when a key is pressed down. -->
+    <input type="text" onkeydown="console.log('Key down!')" />
+
+    <!-- Submit Event:
+Triggered when a form is submitted. -->
+    <form onsubmit="alert('Form submitted!')">
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Focus Event:
+Fired when an element gains focus. -->
+    <input type="text" onfocus="console.log('Input focused')" />
+
+    <!-- Blur Event:
+Triggered when an element loses focus. -->
+    <input type="text" onblur="console.log('Input blurred')" />
+
+    <!-- Change Event:
+Fired when the value of an input element changes (mostly used with form elements like textboxes, checkboxes, and dropdowns). -->
+    <input type="text" onchange="console.log('Value changed')" />
+
+    <!-- Scroll Event:
+Triggered when the user scrolls through the content of an element. -->
+    <div onscroll="console.log('Scrolled!')" style="height: 100px; overflow: auto;">
+        <!-- Some long content here -->
+    </div>
+
+
+    <script>
+        // Load Event:
+        // Fired when the page and all its resources (images, stylesheets, scripts) have finished loading.
+        window.onload = function () {
+            console.log('Page loaded');
+        };
+
+        // Resize Event:
+        // Occurs when the browser window is resized.
+
+        window.onresize = function () {
+            console.log('Window resized');
+        };
+    </script>
+</body>
+
+</html>
