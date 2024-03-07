@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse Events</title>
+</head>
+<body>
+  <button id="myButton">Click me</button>
+<div id="myDiv" style="width: 100%; height: 100px; background-color: blue;"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('myButton');
+    const div = document.getElementById('myDiv');
+
+    button.addEventListener('click', function() {
+      console.log('Button clicked!');
+    });
+
+    div.addEventListener('mouseover', function() {
+      console.log('Mouse over the div!');
+    });
+
+    div.addEventListener('mouseout', function() {
+      console.log('Mouse out of the div!');
+    });
+
+    div.addEventListener('mousemove', function(event) {
+      console.log(`Mouse position - X: ${event.clientX}, Y: ${event.clientY}`);
+    });
+
+    div.addEventListener('mousedown', function() {
+      console.log('Mouse button pressed down!');
+    });
+
+    div.addEventListener('mouseup', function() {
+      console.log('Mouse button released!');
+    });
+  });
+</script>
+</body>
+</html>
