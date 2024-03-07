@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+body {
+  font-family: "PT Mono", monospace;
+  background: #34495e;
+  color: #fff;
+  font-weight: bold;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+
+}
+/* var */
+:root {
+  --blue: #3498db;
+  --red: #e74c3c;
+  --yellow: #f1c40f;
+}
+/* typo */
+.bg-red {
+  background: var(--red);
+}
+.bg-blue {
+  background: var(--blue);
+}
+.bg-yellow {
+  background: var(--yellow);
+}
+.txt-red {
+  color: var(--red);
+}
+.txt-blue {
+  color: var(--blue);
+}
+.txt-yellow {
+  color: var(--yellow);
+}
+.container{
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 12px;
+}

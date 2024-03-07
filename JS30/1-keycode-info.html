@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keycode Info</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
+
+    body {
+      font-family: "PT Mono", monospace;
+      background: #34495e;
+      color: #fff;
+      font-weight: bold;
+      display: grid;
+      place-content: center;
+      min-height: 100vh;
+    }
+
+    #keycode-info {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Keycode Info</h1>
+  <p>Press any key to see its keycode.</p>
+  <div id="keycode-info"></div>
+  <script>
+    document.addEventListener("keydown", function (event) {
+      const keycodeDisplay = document.getElementById("keycode-info");
+      keycodeDisplay.innerHTML = `<p>Key: ${event.key}</p><p>Code: ${event.code}</p><p>Keycode: ${event.keyCode}</p>`;
+    });
+
+  </script>
+</body>
+
+</html>
